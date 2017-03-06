@@ -5,19 +5,20 @@
  */
 package beans;
 
-import javax.enterprise.context.ApplicationScoped;
+import java.io.Serializable;
 import javax.inject.Named;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.enterprise.context.SessionScoped;
 
 /**
  *
  * @author c0587637
  */
 @Named
-@ApplicationScoped
-public class HelloBean {
+@SessionScoped
+public class HelloBean implements Serializable {
 
     private Connection getConnection() throws SQLException {
         try {
